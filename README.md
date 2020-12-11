@@ -10,6 +10,7 @@ This repository contains C# code that covers various topics including algorithms
 - [X] Find element
 - [X] Remove element
 - [X] Reverse the list
+- [] Unit test
 
 ### Binary Search Tree
 - [X] Add
@@ -18,17 +19,17 @@ This repository contains C# code that covers various topics including algorithms
 - [X] Print in order
 - [X] Tree height
 - [X] Min and max value
-- [] Test
+- [] Unit test
 
 ### Binary Tree
 - [] Add
 - [X] Find
 - [X] Min and max value
-- [] Test
+- [] Unit test
 
 ### Binary Tree utilities
 - [X] Tree height
 - [X] Count nodes
 - [X] Is it a binary search tree?
 - [X] Print level order
-- [] Test
+- [] Unit test
