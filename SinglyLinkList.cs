@@ -4,29 +4,18 @@ namespace Miscellaneous
 {
     public class SinglyLinkList
     {
-        private Node head;
-
-        private class Node
-        {
-            public int Value { get; set; }
-            public Node Next { get; set; }
-
-            public Node(int value)
-            {
-                this.Value = value;
-            }
-        }
+        private SNode head;
 
         public void AddToTail(int value)
         {
-            Node newNode = new Node(value);
+            var newNode = new SNode(value);
             if (head == null)
             {
                 head = newNode;
                 return;
             }
 
-            Node current = head;
+            SNode current = head;
 
             while (current.Next != null)
             {
@@ -37,7 +26,7 @@ namespace Miscellaneous
 
         public void AddToHead(int value)
         {
-            Node newNode = new Node(value);
+            var newNode = new SNode(value);
             if (head == null)
             {
                 head = newNode;
@@ -52,7 +41,7 @@ namespace Miscellaneous
         {
             if (head == null) return;
 
-            Node current = head;
+            SNode current = head;
             while (current != null)
             {
                 System.Console.WriteLine(current.Value);
@@ -64,7 +53,7 @@ namespace Miscellaneous
         {
             if (head == null) return false;
 
-            Node current = head;
+            SNode current = head;
 
             while (current != null)
             {
@@ -87,7 +76,7 @@ namespace Miscellaneous
                 return;
             }
 
-            Node current = head;
+            SNode current = head;
 
             while (current.Next != null && current.Next.Next != null)
             {
@@ -116,7 +105,7 @@ namespace Miscellaneous
             PrintReverseHelper(head);
         }
         
-        private void PrintReverseHelper(Node node)
+        private void PrintReverseHelper(SNode node)
         {
             if (node == null) return;
 
@@ -128,9 +117,9 @@ namespace Miscellaneous
         {
             if(head == null) return;
 
-            Node p = null;
-            Node c = head;
-            Node n = head.Next;
+            SNode p = null;
+            SNode c = head;
+            SNode n = head.Next;
 
             while (c.Next != null)
             {
