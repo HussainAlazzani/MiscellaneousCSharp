@@ -10,7 +10,7 @@ This repository contains C# code that covers various topics including algorithms
 - [X] Find element
 - [X] Remove element
 - [X] Reverse the list
-- [] Unit test
+- [x] Unit test
 
 ### Binary Search Tree
 - [X] Add
