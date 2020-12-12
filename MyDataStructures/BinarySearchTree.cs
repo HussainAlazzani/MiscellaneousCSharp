@@ -1,15 +1,43 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MyDataStructures
 {
-    public class BinarySearchTree
+    public class BinarySearchTree : IEnumerable<int>
     {
         private BNode root;
 
+        public int[] GetValues => this.ToArray<int>();
+        public int MinValue => this.GetMinValue(root);
+        public int MaxValue => this.GetMaxValue(root);
         public int Count => BinaryTreeUtilities.Count(root);
         public int Height => BinaryTreeUtilities.Height(root);
         public bool isBinaryTree => BinaryTreeUtilities.IsBinarySearchTree(root);
+
+        public IEnumerator<int> GetEnumerator()
+        {
+            if (root == null)
+            {
+                Enumerable.Empty<int>();
+            }
+            else
+            {
+                List<int> values = new List<int>();
+                BinaryTreeUtilities.GetAllValues(root, values);
+                foreach (var item in values)
+                {
+                    yield return item;
+
+                }
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
 
         public void Add(int value)
         {
@@ -99,7 +127,7 @@ namespace MyDataStructures
                 // if the element has two children
                 else
                 {
-                    node.Value = MaxValue(node.Left);
+                    node.Value = GetMaxValue(node.Left);
                     node.Left = Remove(node.Left, node.Value);
                 }
             }
@@ -107,7 +135,10 @@ namespace MyDataStructures
             return node;
         }
 
-        public int MinValue(BNode node)
+        /// <summary>
+        /// This is an iterative implementation that is specific to a binary search tree.
+        /// </summary>
+        public int GetMinValue(BNode node)
         {
             if (node == null) return int.MaxValue;
 
@@ -119,7 +150,10 @@ namespace MyDataStructures
             return node.Value;
         }
 
-        public int MaxValue(BNode node)
+        /// <summary>
+        /// This is an iterative implementation that is specific to a binary search tree.
+        /// </summary>
+        public int GetMaxValue(BNode node)
         {
             if (node == null) return int.MinValue;
 
@@ -129,5 +163,6 @@ namespace MyDataStructures
             }
             return node.Value;
         }
+
     }
 }

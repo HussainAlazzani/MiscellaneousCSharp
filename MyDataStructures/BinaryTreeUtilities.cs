@@ -8,6 +8,16 @@ namespace MyDataStructures
     /// </summary>
     static class BinaryTreeUtilities
     {
+        public static void GetAllValues(BNode node, List<int> list)
+        {
+            if (node == null) return;
+
+            GetAllValues(node.Left, list);
+            list.Add(node.Value);
+            GetAllValues(node.Right, list);
+
+        }
+
         public static void PrintLevelOrder(BNode node)
         {
             if (node == null) return;
@@ -70,6 +80,6 @@ namespace MyDataStructures
                 return false;
         }
 
-        
+
     }
 }

@@ -8,14 +8,8 @@ namespace MyDataStructures
     {
         private SNode head;
 
-        public int[] GetValues
-        {
-            get
-            {
-                return this.ToArray<int>();
-            }
-        }
-
+        public int[] GetValues => this.ToArray<int>();
+        
         public void AddToTail(int value)
         {
             var newNode = new SNode(value);
