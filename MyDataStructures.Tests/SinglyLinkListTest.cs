@@ -1,7 +1,7 @@
 using Xunit;
 using System.Linq;
 
-namespace MyDataStructures.Test
+namespace MyDataStructures.Tests
 {
     public class SinglyLinkListTest
     {
@@ -40,7 +40,6 @@ namespace MyDataStructures.Test
 
             // Assert
             Assert.Equal(values, result);
-            
         }
 
         [Fact]
@@ -58,9 +57,22 @@ namespace MyDataStructures.Test
             }
 
             int[] result = linkList.GetValues;
-            
+
             // Assert
             Assert.Equal(expected, result);
+        }
+
+        [Fact]
+        public void GetValueOfEmptyList_EmptyArray()
+        {
+            // Arrange
+            var linkList = new SinglyLinkList();
+
+            // Act
+            int[] result = linkList.GetValues;
+
+            // Assert
+            Assert.Empty(result);
         }
     }
 }
