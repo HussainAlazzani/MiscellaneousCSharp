@@ -19,17 +19,16 @@ This repository contains C# code that covers various topics including algorithms
 - [X] Print in order
 - [X] Tree height
 - [X] Min and max value
-- [] Unit test
+- [x] Unit test
 
 ### Binary Tree
-- [] Add
 - [X] Find
 - [X] Min and max value
-- [] Unit test
 
 ### Binary Tree utilities
 - [X] Tree height
 - [X] Count nodes
 - [X] Is it a binary search tree?
 - [X] Print level order
-- [] Unit test
+- [x] Unit test - Utilities Tested along with the Binary search tree
+
