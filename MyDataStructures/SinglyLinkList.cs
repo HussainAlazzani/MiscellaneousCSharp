@@ -1,10 +1,20 @@
-using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace Miscellaneous
+namespace MyDataStructures
 {
-    public class SinglyLinkList
+    public class SinglyLinkList : IEnumerable<int>
     {
         private SNode head;
+
+        public int[] GetValues
+        {
+            get
+            {
+                return this.ToArray<int>();
+            }
+        }
 
         public void AddToTail(int value)
         {
@@ -37,6 +47,28 @@ namespace Miscellaneous
             head = newNode;
         }
 
+        public IEnumerator<int> GetEnumerator()
+        {
+            if (head == null)
+            {
+                Enumerable.Empty<int>();
+            }
+            else
+            {
+                SNode current = head;
+                while (current != null)
+                {
+                    yield return current.Value;
+                    current = current.Next;
+                }
+            }
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         public void Print()
         {
             if (head == null) return;
@@ -59,7 +91,7 @@ namespace Miscellaneous
             {
                 if (current.Value == value)
                     return true;
-                
+
                 current = current.Next;
             }
             return false;
@@ -67,7 +99,7 @@ namespace Miscellaneous
 
         public void Remove(int value)
         {
-            if(head == null) return;
+            if (head == null) return;
 
             // If first node matches value
             if (head.Value == value)
@@ -104,7 +136,7 @@ namespace Miscellaneous
             if (head == null) return;
             PrintReverseHelper(head);
         }
-        
+
         private void PrintReverseHelper(SNode node)
         {
             if (node == null) return;
@@ -115,7 +147,7 @@ namespace Miscellaneous
 
         public void Reverse()
         {
-            if(head == null) return;
+            if (head == null) return;
 
             SNode p = null;
             SNode c = head;

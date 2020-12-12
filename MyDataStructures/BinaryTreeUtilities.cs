@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Miscellaneous
+namespace MyDataStructures
 {
     /// <summary>
     /// This class contains utility methods that can be called by all types of binary trees.

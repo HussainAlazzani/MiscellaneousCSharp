@@ -1,6 +1,6 @@
 using System;
 
-namespace Miscellaneous
+namespace MyDataStructures
 {
     public class SNode
     {

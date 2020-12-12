@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Miscellaneous
+namespace MyDataStructures
 {
     public class BinarySearchTree
     {
